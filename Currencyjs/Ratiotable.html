@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Ratiotable</title>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" 
+                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+                crossorigin="anonymous">                   
+        </script>                                     
+        <script type="application/javascript" src="js/style.js"></script>          
+        <link href="css/style.css" id="stylesheet" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="page">
+            <div class="content1part0">
+                <label class="label1">Select design</label>
+                <div>   
+                    <span id="light"><button id="stylesheet1" onclick="initate('Def');ddd('a');">Default</button></span>
+                    <span id="dark"><button id="stylesheet2" onclick="initate('Dark');ddd('b');">Dark</button></span>
+                </div>            
+            </div><hr/>
+            <div id="header">Currency rate compared to Euro</div> 
+            <div id="content1">
+                <div class="content1part1">
+                    <label class="label1">Number Of Rows</label>
+                    <select class  ="form-control" name="state" id="maxRows">
+                        <option value="5000">Show ALL</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                        <option value="70">70</option>
+                        <option value="100">100</option>
+                    </select>
+                </div>
+                <div class="content1part1">
+                    <label class="label1">Select sortorder</label>
+                    <select class ="form-control" name="state" id="sortOrder">
+                        <option value="None">None</option>
+                        <option value="Asc">Ascending</option>
+                        <option value="Desc">Descending</option>
+                    </select>	 		
+                </div>
+                <div class="content1part1">
+                    <label class="label2">Date</label>
+                    <input type="date" class="dateinput" id="dateinput" min="2001-01-01" max="2000-12-12"/>
+                    <button id="getData" class="databutton">Get data</button>
+                </div>
+                <div hidden id="countrysearch" style="width:100%">
+                <label class="label2">Search</label>    
+                <input type="text" id="countrysearchinput" placeholder="Enter country or number to search for:"/>
+                </div>
+            </div><hr/>
+            <div id="ratioDiv" class="content1part2" align="center"></div><hr/>
+            <div class="content1part3">
+                <div id="pagination" hidden align="center">
+                    <label>Showing</label><br/>
+                    <button id="num1" value="0">Previous</button>
+                    <span id="current"></span>
+                    <button id="num2" value="16">Next</button>
+                </div>           
+            </div>
+        </div>         
+        <script type="application/javascript" src="js/variables.js"></script>
+        <script type="application/javascript" src="js/events.js"></script>
+        <script type="application/javascript" src="js/functions.js"></script>
+    </body>
+</html>
