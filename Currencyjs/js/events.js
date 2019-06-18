@@ -1,5 +1,6 @@
 // set endpoint and your access key
 // get the most recent exchange rates via the "latest" endpoint:
+// From the dokumentation and outputs the table
 $('#getData').on('click',function(){
     var endpoint ='';
     if($('#dateinput').val()!=""){
@@ -35,20 +36,24 @@ $('#getData').on('click',function(){
     });
 });
 
+// Just placeholders for the functions that do the work
 $('#maxRows,#sortOrder').on('change',function(){
     $('#countrysearchinput').val('');
     sortFunction();
     amountOfRows();
 });
         
+// Just placeholders for the functions that do the work        
 $('#countrysearchinput').on('keyup',function(){
     sortFunction();
     amountOfRows();
+    // Dont want this to do stuff if the textbox is empty 
     if($(this).val()!=""){
         countrysearch();
     }
 });
 
+// Show Next Prev.
 $('#num1,#num2').on('click',function(e){  
     sortFunction();
     if($(this).attr('id')=='num1'){

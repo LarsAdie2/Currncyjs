@@ -1,12 +1,12 @@
-function swapStyleSheet(sheet) {
-    
-    document.getElementById("stylesheet").setAttribute("href", sheet);
-    
+// Changes the stylesheet of the page 
+function swapStyleSheet(sheet) {    
+    $("#stylesheet").attr("href", sheet);
 }
 
+// Must be in the header to work
 function initate(item) {
-    var style1 = document.getElementById("stylesheet1");
-    var style2 = document.getElementById("stylesheet2");   
+    var style1 =$("#stylesheet1");
+    var style2 =$("#stylesheet2");   
     if(item=='Def'){
         style1.onclick = swapStyleSheet("css/style.css");
     }
@@ -15,16 +15,15 @@ function initate(item) {
     }
 }
 
-$("#design").on('change',function(){
-   alert('a');
-});
-function ddd(item){
+// The above is the first time the page loads
+// this is for all other times, removes the button and puts in another
+function changeStyleSheet(item){
     if(item=="a"){
         $("#light").html('');
-        $('#light').append('<button id="stylesheet1" onclick="initate(\'Def\');ddd(\'a\');">Default</button>');
+        $('#light').append('<button id="stylesheet1" onclick="initate(\'Def\');changeStyleSheet(\'a\');">Default</button>');
     }
     if(item=="b"){
         $("#dark").html('');
-        $('#dark').append('<button id="stylesheet1" onclick="initate(\'Dark\');ddd(\'b\');">Dark</button>');
+        $('#dark').append('<button id="stylesheet1" onclick="initate(\'Dark\');changeStyleSheet(\'b\');">Dark</button>');
     }
 }
